@@ -1,44 +1,59 @@
 import React, { PureComponent } from "react";
+import "./styles.css";
 import PersonalInfo from "./components/PersonalInfo";
+import Projects from "./components/Projects";
+import Experience from "./components/Experience";
+import Education from "./components/Education";
 
 export default class App extends PureComponent {
   constructor() {
     super();
     this.state = {
       personalInfo: {
-        firstName: "Example",
+        firstName: "John",
         lastName: "Smith",
-        photo: "My photo",
-        adress: "Poznan",
+        adress: "Poznan, Poland",
         phoneNum: "+48 123 456 789",
         mail: "example@gmail.com",
-        summary: "Hello there!",
+        github: "github.com/johnsmith",
+        linkedin: "linkedin.com/in/johnsmith",
+        summary:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
       },
-
-      // experience: {
-      //   position: "",
-      //   company: "",
-      //   city: "",
-      //   workedFrom: "",
-      //   workedTo: "",
-      // },
-      // education: {
-      //   schoolName: "",
-      //   city: "",
-      //   studies: "",
-      //   degree: "",
-      //   studiedFrom: "",
-      //   studiedTo: "",
-      // },
+      projects: {
+        name: "CV Application",
+        description:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      },
+      experience: {
+        position: "Team lider",
+        company: "Best Company LTD",
+        city: "New York",
+        workedFrom: "2016",
+        workedTo: "2022",
+      },
+      education: {
+        schoolName: "WSRH",
+        city: "Pzn",
+        studies: "Lans&Balans",
+        degree: "Ziom",
+        studiedFrom: "2013",
+        studiedTo: "2016",
+      },
     };
   }
   render() {
-    const { personalInfo, experience, education } = this.state;
-
+    const { personalInfo, projects, experience, education } = this.state;
+    const printableCV = document.getElementsByClassName("printableCV");
     return (
       <>
-        Hi world
-        <PersonalInfo personalInfo={personalInfo} />
+        <button onClick={window.print}>Print me!</button>
+        <div className="printableCV">
+          <PersonalInfo {...personalInfo} />
+          <Experience {...experience} />
+          <Education {...education} />
+          <Projects {...projects} />
+        </div>
       </>
     );
   }

@@ -1,0 +1,94 @@
+/* to show boxes */
+/* * {
+  border: 1px black solid;
+} */
+
+/* simple reset */
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  text-decoration: none;
+  color: inherit;
+}
+
+#root {
+}
+
+.printableCV {
+  color: white;
+  background-color: rgb(43, 47, 49);
+  height: 297mm;
+  width: 210mm;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: min-content;
+  grid-template-areas:
+    "name name"
+    "summary info"
+    "projects info"
+    "experience info"
+    "education info";
+}
+
+.name,
+.summary,
+.personalInfo,
+.projects,
+.experience,
+.education {
+  padding: 1rem;
+}
+
+.componentTitle {
+  color: rgb(143, 192, 235);
+  margin-bottom: 0.5rem;
+  border-bottom: 1px rgb(143, 192, 235) solid;
+  font-size: 1.1rem;
+}
+
+.name {
+  grid-area: name;
+  background-color: rgb(16, 50, 91);
+  font-size: 4rem;
+}
+
+.summary {
+  grid-area: summary;
+}
+
+.personalInfo {
+  grid-area: info;
+  background-color: rgb(53, 57, 59);
+}
+
+.personalInfo p {
+  padding-top: 0.25rem;
+}
+
+.phoneNum p {
+  padding: 0rem;
+}
+
+.projects {
+  grid-area: projects;
+}
+
+.experience {
+  grid-area: experience;
+}
+
+.education {
+  grid-area: education;
+}
+
+@media print {
+  button {
+    display: none;
+  }
+  .printableCV {
+    display: grid;
+  }
+}
