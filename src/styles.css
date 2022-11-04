@@ -15,6 +15,8 @@
 }
 
 #root {
+  display: flex;
+  flex-direction: row;
 }
 
 .printableCV {
@@ -53,6 +55,7 @@
   grid-area: name;
   background-color: rgb(16, 50, 91);
   font-size: 4rem;
+  min-height: 105.3333333px;
 }
 
 .summary {
@@ -76,6 +79,11 @@
   grid-area: projects;
 }
 
+.projectName {
+  font-weight: bold;
+  padding-bottom: 0.25rem;
+}
+
 .experience {
   grid-area: experience;
 }
@@ -84,8 +92,40 @@
   grid-area: education;
 }
 
+.componentContent {
+  display: flex;
+}
+
+.workplaceInfo,
+.schoolInfo {
+  padding-left: 5rem;
+}
+
+.mainForm {
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+  padding: 1rem;
+}
+
+input {
+  margin: 0.25rem;
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  appearance: none;
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 @media print {
-  button {
+  .mainForm {
     display: none;
   }
   .printableCV {

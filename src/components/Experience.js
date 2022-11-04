@@ -4,9 +4,17 @@ const Experience = (props) => {
   return (
     <div className="experience">
       <div className="componentTitle">Experience</div>
-      {Object.values(props).map((value, index) => {
-        return <div key={index}>{value}</div>;
-      })}
+      <div className="componentContent">
+        <div className="years">
+          {props.workedFrom} - {props.workedTo}
+        </div>
+        <div className="workplaceInfo">
+          <div className="position">{props.position}</div>
+          <div className="companyInfo">
+            {props.company}, {props.city}
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

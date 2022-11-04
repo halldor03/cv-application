@@ -19,13 +19,13 @@ const PersonalInfo = (props) => {
           <p>Email</p> {props.mail}
         </div>
         <div className="adress">
-          <p>City</p> {props.adress}
+          <p>Adress</p> {props.adress}
         </div>
-        <div className="github">
-          <p>GitHub</p> {props.github}
+        <div className="link1">
+          <p>{props.link1.name}</p> {props.link1.adress}
         </div>
-        <div className="linkedin">
-          <p>LinkedIn</p> {props.linkedin}
+        <div className="link2">
+          <p>{props.link2.name}</p> {props.link2.adress}
         </div>
       </div>
     </>
