@@ -108,6 +108,11 @@
   padding: 1rem;
 }
 
+.projectInput {
+  display: flex;
+  flex-direction: column;
+}
+
 input {
   margin: 0.25rem;
 }
@@ -131,4 +136,10 @@ input::-webkit-inner-spin-button {
   .printableCV {
     display: grid;
   }
+}
+
+.test {
+  background-color: red;
+  width: 500px;
+  height: 500px;
 }
