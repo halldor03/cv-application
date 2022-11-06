@@ -1,6 +1,8 @@
 import React, { PureComponent } from "react";
 import "./styles.css";
-import Form from "./components/MainForm";
+import Header from "./components/Header";
+import MainContent from "./components/MainContent";
+import Footer from "./components/Footer";
 
 export default class App extends PureComponent {
   constructor() {
@@ -10,10 +12,12 @@ export default class App extends PureComponent {
   render() {
     return (
       <>
-        <Form />
+        <Header />
+        <main>
+          <MainContent />
+        </main>
+        <Footer />
       </>
     );
   }
 }
-
-// https://michalosman.github.io/cv-application/
