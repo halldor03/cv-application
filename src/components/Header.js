@@ -5,6 +5,10 @@ export default class Header extends PureComponent {
     super(props);
   }
   render() {
-    return <header>CV CREATOR</header>;
+    return (
+      <header>
+        <div className="headerTitle">CV CREATOR</div>
+      </header>
+    );
   }
 }

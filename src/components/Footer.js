@@ -5,6 +5,6 @@ export default class Footer extends PureComponent {
     super(props);
   }
   render() {
-    return <footer>This is a footer</footer>;
+    return <footer>Copyright &copy; Kacper Szulc 2022</footer>;
   }
 }

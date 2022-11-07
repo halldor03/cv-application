@@ -8,55 +8,85 @@ export default class MainContent extends PureComponent {
 
     this.state = {
       personalInfo: {
-        firstName: "",
-        lastName: "",
-        adress: "",
-        phoneNum: "",
-        mail: "",
-        link1: { name: "", adress: "" },
-        link2: { name: "", adress: "" },
-        summary: "",
+        firstName: "Kacper",
+        lastName: "Szulc",
+        adress: "Poznan, Poland",
+        phoneNum: "600 434 411",
+        mail: "szulckacper1@gmail.com",
+        link1: { name: "GitHub", adress: "github.com/halldor03" },
+        link2: { name: "LinkedIn", adress: "linkedin.com/in/szulckacper" },
+        summary: `Detail-oriented Civil Engineer with over 3 years of experience and a zest for solving complex problems. After realizing I'm more interested in technology than what happens on construction site, decided to make a career shift.`,
+        skill1: "HTML, CSS",
+        skill2: "Javascript, ReactJS",
+        skill3: "Webpack",
+        skill4: "Git version control",
       },
       projects: [
-        { name: "sampleProject1", description: "sampleDesc1", id: uniqid() },
-        { name: "sampleProject2", description: "sampleDesc2", id: uniqid() },
-        { name: "sampleProject3", description: "sampleDesc3", id: uniqid() },
-      ],
-      experiences: [
         {
-          position: "samplePosition1",
-          company: "sampleCompany1",
-          localization: "sampleCity1",
-          workedFrom: "2016",
-          workedTo: "2019",
+          name: "CV Creator (HTML, CSS, REACTJS)",
+          description1:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+          description2:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+          description3:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+          description4:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
           id: uniqid(),
         },
         {
-          position: "samplePosition2",
-          company: "sampleCompany2",
-          localization: "sampleCity",
+          name: "Weather App (HTML, CSS, JS, API)",
+          description1:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+          description2:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+          description3:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+          description4:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+          id: uniqid(),
+        },
+        {
+          name: "Todo List (HTML, CSS, JS)",
+          description1:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+          description2:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+          description3:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+          description4:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+          id: uniqid(),
+        },
+      ],
+      experiences: [
+        {
+          position: "Assistant Civil Engineer",
+          company: "SD PROJEKT Sp. z o.o.",
+          localization: "Poznan, Poland",
+          description1:
+            "Designed complex road projects in coordination with contractors",
+          description2:
+            "Coordinated and monitored execution of projects for compliance with specifications",
+          description3:
+            "Assisted Senior Engineer in both project-oriented and team-oriented tasks (e.g. onboarding new employees)",
+          description4:
+            "Acted as client manager for investors, both private and government",
+          description5:
+            "Helped to implement the usage of sophisticated computer-aided design programs to enhance design process",
           workedFrom: "2019",
-          workedTo: "2022",
+          workedTo: "Present",
           id: uniqid(),
         },
       ],
       educations: [
         {
-          schoolName: "sampleSchoolName1",
-          localization: "sampleCityName1",
-          field: "sampleStudies1",
-          degree: "sampleDegree1",
-          studiedFrom: "2013",
-          studiedTo: "2016",
-          id: uniqid(),
-        },
-        {
-          schoolName: "sampleSchoolName2",
-          localization: "sampleCityName2",
-          field: "sampleStudies2",
-          degree: "sampleDegree2",
-          studiedFrom: "2010",
-          studiedTo: "2013",
+          schoolName: "Poznan University of Technology",
+          localization: "Poznan, Poland",
+          field: "Civil Engineering",
+          degree: "M.Sc.Eng.",
+          studiedFrom: "2016",
+          studiedTo: "2022",
           id: uniqid(),
         },
       ],
@@ -74,6 +104,10 @@ export default class MainContent extends PureComponent {
     const link2NameInput = document.getElementById("link2NameInput");
     const link2AdressInput = document.getElementById("link2AdressInput");
     const summaryInput = document.getElementById("summaryInput");
+    const skill1Input = document.getElementById("skill1Input");
+    const skill2Input = document.getElementById("skill2Input");
+    const skill3Input = document.getElementById("skill3Input");
+    const skill4Input = document.getElementById("skill4Input");
     this.setState({
       personalInfo: {
         firstName: firstNameInput.value,
@@ -84,6 +118,10 @@ export default class MainContent extends PureComponent {
         link1: { name: link1NameInput.value, adress: link1AdressInput.value },
         link2: { name: link2NameInput.value, adress: link2AdressInput.value },
         summary: summaryInput.value,
+        skill1: skill1Input.value,
+        skill2: skill2Input.value,
+        skill3: skill3Input.value,
+        skill4: skill4Input.value,
       },
     });
   };
@@ -203,12 +241,9 @@ export default class MainContent extends PureComponent {
   render() {
     const { personalInfo, projects, experiences, educations } = this.state;
 
-    // console.log("project:", this.state.project);
-    // console.table("projects:", this.state.projects);
-
     return (
       <>
-        <form className="mainForm">
+        <form className="mainForm" spellCheck="false">
           {/* PERSONAL INFO */}
           <div className="fieldsetTitle">Personal Info</div>
           <fieldset className="personalForm">
@@ -219,6 +254,7 @@ export default class MainContent extends PureComponent {
               id="firstNameInput"
               onChange={this.handleChangePersonalInfo}
               value={personalInfo.firstName}
+              autoComplete="chrome-off"
             />
             <input
               type="text"
@@ -226,6 +262,7 @@ export default class MainContent extends PureComponent {
               id="lastNameInput"
               onChange={this.handleChangePersonalInfo}
               value={personalInfo.lastName}
+              autoComplete="chrome-off"
             />
             <input
               type="text"
@@ -233,13 +270,15 @@ export default class MainContent extends PureComponent {
               id="adressInput"
               onChange={this.handleChangePersonalInfo}
               value={personalInfo.adress}
+              autoComplete="chrome-off"
             />
             <input
-              type="number"
+              type="tel"
               placeholder="Phone number"
               id="phoneNumberInput"
               onChange={this.handleChangePersonalInfo}
               value={personalInfo.phoneNum}
+              autoComplete="chrome-off"
             />
             <input
               type="text"
@@ -247,6 +286,7 @@ export default class MainContent extends PureComponent {
               id="mailInput"
               onChange={this.handleChangePersonalInfo}
               value={personalInfo.mail}
+              autoComplete="chrome-off"
             />
             <div className="link1">
               <input
@@ -255,6 +295,7 @@ export default class MainContent extends PureComponent {
                 id="link1NameInput"
                 onChange={this.handleChangePersonalInfo}
                 value={personalInfo.link1.name}
+                autoComplete="chrome-off"
               />
               <input
                 type="text"
@@ -262,6 +303,7 @@ export default class MainContent extends PureComponent {
                 id="link1AdressInput"
                 onChange={this.handleChangePersonalInfo}
                 value={personalInfo.link1.adress}
+                autoComplete="chrome-off"
               />
             </div>
             <div className="link2">
@@ -271,6 +313,7 @@ export default class MainContent extends PureComponent {
                 id="link2NameInput"
                 onChange={this.handleChangePersonalInfo}
                 value={personalInfo.link2.name}
+                autoComplete="chrome-off"
               />
               <input
                 type="text"
@@ -278,14 +321,48 @@ export default class MainContent extends PureComponent {
                 id="link2AdressInput"
                 onChange={this.handleChangePersonalInfo}
                 value={personalInfo.link2.adress}
+                autoComplete="chrome-off"
               />
             </div>
-            <input
+            <textarea
               type="text"
               placeholder="Summary"
               id="summaryInput"
               onChange={this.handleChangePersonalInfo}
-              value={personalInfo.summary}
+              defaultValue={personalInfo.summary}
+              autoComplete="chrome-off"
+            />
+            <input
+              type="text"
+              placeholder="Skill"
+              id="skill1Input"
+              onChange={this.handleChangePersonalInfo}
+              value={personalInfo.skill1}
+              autoComplete="chrome-off"
+            />
+            <input
+              type="text"
+              placeholder="Skill"
+              id="skill2Input"
+              onChange={this.handleChangePersonalInfo}
+              value={personalInfo.skill2}
+              autoComplete="chrome-off"
+            />
+            <input
+              type="text"
+              placeholder="Skill"
+              id="skill3Input"
+              onChange={this.handleChangePersonalInfo}
+              value={personalInfo.skill3}
+              autoComplete="chrome-off"
+            />
+            <input
+              type="text"
+              placeholder="Skill"
+              id="skill4Input"
+              onChange={this.handleChangePersonalInfo}
+              value={personalInfo.skill4}
+              autoComplete="chrome-off"
             />
           </fieldset>
           {/* PERSONAL PROJECTS */}
@@ -302,14 +379,43 @@ export default class MainContent extends PureComponent {
                     onChange={(e) => this.handleChangeProjects(e, project)}
                     name="name"
                     value={project.name}
+                    autoComplete="chrome-off"
                   />
-                  <input
+                  <textarea
                     type="text"
-                    placeholder="Project description"
+                    placeholder="Project details"
                     className="projectDescriptionInput"
                     onChange={(e) => this.handleChangeProjects(e, project)}
-                    name="description"
-                    value={project.description}
+                    name="description1"
+                    defaultValue={project.description1}
+                    autoComplete="chrome-off"
+                  />
+                  <textarea
+                    type="text"
+                    placeholder="Project details"
+                    className="projectDescriptionInput"
+                    onChange={(e) => this.handleChangeProjects(e, project)}
+                    name="description2"
+                    defaultValue={project.description2}
+                    autoComplete="chrome-off"
+                  />
+                  <textarea
+                    type="text"
+                    placeholder="Project details"
+                    className="projectDescriptionInput"
+                    onChange={(e) => this.handleChangeProjects(e, project)}
+                    name="description3"
+                    defaultValue={project.description3}
+                    autoComplete="chrome-off"
+                  />
+                  <textarea
+                    type="text"
+                    placeholder="Project details"
+                    className="projectDescriptionInput"
+                    onChange={(e) => this.handleChangeProjects(e, project)}
+                    name="description4"
+                    defaultValue={project.description4}
+                    autoComplete="chrome-off"
                   />
                   <button onClick={(e) => this.deleteProject(e, index)}>
                     Delete project
@@ -335,6 +441,7 @@ export default class MainContent extends PureComponent {
                     }
                     name="position"
                     value={experience.position}
+                    autoComplete="chrome-off"
                   />
                   <input
                     type="text"
@@ -345,6 +452,7 @@ export default class MainContent extends PureComponent {
                     }
                     name="company"
                     value={experience.company}
+                    autoComplete="chrome-off"
                   />
                   <input
                     type="text"
@@ -355,6 +463,62 @@ export default class MainContent extends PureComponent {
                     }
                     name="localization"
                     value={experience.localization}
+                    autoComplete="chrome-off"
+                  />
+                  <textarea
+                    type="text"
+                    placeholder="Job details"
+                    className="experienceLDescriptionInput"
+                    onChange={(e) =>
+                      this.handleChangeExperiences(e, experience)
+                    }
+                    name="description1"
+                    value={experience.description1}
+                    autoComplete="chrome-off"
+                  />{" "}
+                  <textarea
+                    type="text"
+                    placeholder="Job details"
+                    className="experienceLDescriptionInput"
+                    onChange={(e) =>
+                      this.handleChangeExperiences(e, experience)
+                    }
+                    name="description2"
+                    value={experience.description2}
+                    autoComplete="chrome-off"
+                  />{" "}
+                  <textarea
+                    type="text"
+                    placeholder="Job details"
+                    className="experienceLDescriptionInput"
+                    onChange={(e) =>
+                      this.handleChangeExperiences(e, experience)
+                    }
+                    name="description3"
+                    value={experience.description3}
+                    autoComplete="chrome-off"
+                  />{" "}
+                  <textarea
+                    type="text"
+                    placeholder="Job details"
+                    className="experienceLDescriptionInput"
+                    onChange={(e) =>
+                      this.handleChangeExperiences(e, experience)
+                    }
+                    name="description4"
+                    value={experience.description4}
+                    autoComplete="chrome-off"
+                  />{" "}
+                  <textarea
+                    type="text"
+                    placeholder="Job details"
+                    className="experienceLDescriptionInput"
+                    onChange={(e) =>
+                      this.handleChangeExperiences(e, experience)
+                    }
+                    name="description5"
+                    value={experience.description5}
+                    autoComplete="chrome-off"
                   />
                   <div className="workTime">
                     <input
@@ -365,7 +529,8 @@ export default class MainContent extends PureComponent {
                         this.handleChangeExperiences(e, experience)
                       }
                       name="workedFrom"
-                      value={experience.workedFrom}
+                      defaultValue={experience.workedFrom}
+                      autoComplete="chrome-off"
                     />
                     <input
                       type="text"
@@ -376,6 +541,7 @@ export default class MainContent extends PureComponent {
                       }
                       name="workedTo"
                       value={experience.workedTo}
+                      autoComplete="chrome-off"
                     />
                   </div>
                   <button onClick={(e) => this.deleteExperience(e, index)}>
@@ -400,6 +566,7 @@ export default class MainContent extends PureComponent {
                     onChange={(e) => this.handleChangeEducations(e, education)}
                     name="schoolName"
                     value={education.schoolName}
+                    autoComplete="chrome-off"
                   />
                   <input
                     type="text"
@@ -408,6 +575,7 @@ export default class MainContent extends PureComponent {
                     onChange={(e) => this.handleChangeEducations(e, education)}
                     name="localization"
                     value={education.localization}
+                    autoComplete="chrome-off"
                   />
                   <input
                     type="text"
@@ -416,6 +584,7 @@ export default class MainContent extends PureComponent {
                     onChange={(e) => this.handleChangeEducations(e, education)}
                     name="field"
                     value={education.field}
+                    autoComplete="chrome-off"
                   />
                   <input
                     type="text"
@@ -424,6 +593,7 @@ export default class MainContent extends PureComponent {
                     onChange={(e) => this.handleChangeEducations(e, education)}
                     name="degree"
                     value={education.degree}
+                    autoComplete="chrome-off"
                   />
                   <div className="schoolTime">
                     <input
@@ -435,6 +605,7 @@ export default class MainContent extends PureComponent {
                       }
                       name="studiedFrom"
                       value={education.studiedFrom}
+                      autoComplete="chrome-off"
                     />
                     <input
                       type="text"
@@ -445,6 +616,7 @@ export default class MainContent extends PureComponent {
                       }
                       name="studiedTo"
                       value={education.studiedTo}
+                      autoComplete="chrome-off"
                     />
                   </div>
                   <button onClick={(e) => this.deleteEducation(e, index)}>
@@ -455,7 +627,7 @@ export default class MainContent extends PureComponent {
             })}
             <button onClick={this.addEducation}>Add education</button>
           </fieldset>
-          <button onClick={window.print} className="printButton">
+          <button type="button" onClick={window.print} className="printButton">
             Print me!
           </button>
         </form>
@@ -471,5 +643,3 @@ export default class MainContent extends PureComponent {
     );
   }
 }
-
-// https://michalosman.github.io/cv-application/

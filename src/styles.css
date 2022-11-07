@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
 /* to show boxes */
 /* * {
   border: 1px black solid;
@@ -8,14 +10,59 @@
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   text-decoration: none;
-  color: white;
+  color: rgb(200, 195, 188);
+  line-height: 1.5;
+}
+
+::-webkit-scrollbar {
+  width: auto;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(89, 92, 95);
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(38, 42, 43);
+}
+
+ul {
+  list-style: none;
+}
+
+ul li::before {
+  content: "\2022";
+  color: rgb(143, 192, 235);
+  font-weight: bold;
+  display: inline-block;
+  width: 1rem;
+  margin-left: -1rem;
+}
+
+#body {
+  height: 100vh;
 }
 
 header {
-  background-color: red;
+  background-color: rgb(38, 42, 43);
+  height: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 1rem;
+}
+
+.headerTitle {
+  font-size: 3rem;
+  /* width: calc(40vw+800px); */
+  width: 80vw;
+  min-width: fit-content;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 main {
@@ -23,36 +70,59 @@ main {
   background-color: rgb(53, 57, 59);
   justify-content: center;
   align-items: flex-start;
+  padding: 1rem;
 }
 
 footer {
-  background-color: red;
+  background-color: rgb(38, 42, 43);
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* FORM */
 .mainForm {
+  position: sticky;
   background-color: rgb(34, 36, 38);
   display: flex;
   flex-direction: column;
   width: 40vw;
+  max-width: 1000px;
+  /* min-width: fit-content; */
+  /* width: clamp(30rem, 40vw, 50rem); */
   padding: 1rem;
   margin: 1rem;
   border-radius: 0.5rem;
 }
 
-input {
+input,
+textarea {
   font-family: inherit;
   font-size: inherit;
   appearance: none;
   padding: 0.5rem;
   margin: 0.25rem;
-  /* outline: #e0e0e0 0.1rem solid; */
+  outline: 0px;
   border: 0px;
   border-radius: 0.25rem;
   background-color: rgb(59, 59, 59);
 }
 
-input:focus {
+.personalForm textarea {
+  resize: vertical;
+  min-height: 88px;
+  overflow: hidden;
+}
+
+.projectsForm textarea {
+  resize: vertical;
+  min-height: 64px;
+  overflow: hidden;
+}
+
+input:focus,
+textarea:focus {
   outline: rgb(143, 192, 235) 1px solid;
 }
 
@@ -60,7 +130,7 @@ input:focus {
   font-size: 1.1rem;
   font-weight: bold;
   padding: 1rem 0rem 0.25rem 0.25rem;
-  margin-left: 0.25rem;
+  margin-left: 0.5rem;
 }
 
 fieldset {
@@ -93,6 +163,7 @@ legend {
 .experienceWorkedFromInput,
 .educationStudiedFromInput {
   width: 50%;
+  min-width: 200px;
 }
 
 #link1AdressInput,
@@ -129,29 +200,33 @@ button:hover {
 }
 /*  */
 
+/* PREVIEW */
 .previewCV {
-  color: white;
-  background-color: rgb(38, 42, 43);
-  height: 297mm;
-  width: 210mm;
+  background-color: rgb(34, 36, 38);
+  /* min-width: 40vw; */
+  width: 800px;
+  /* max-width: 1000px; */
+  /* min-width: fit-content; */
+  /* width: clamp(30rem, 40vw, 50rem); */
+  /* padding: 1rem; */
+  margin: 1rem;
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 5fr 2fr;
   grid-template-rows: min-content;
   grid-template-areas:
     "name name"
-    "summary info"
-    "projects info"
-    "experience info"
-    "education info";
+    "summary infoSkills"
+    "projects infoSkills"
+    "experience infoSkills"
+    "education infoSkills";
 }
 
-.name,
-.summary,
-.personalInfo,
-.projects,
-.experience,
-.education {
-  padding: 1rem;
+.summaryContainerPreview,
+.infoAndSkillsContainerPreview,
+.projectsContainerPreview,
+.experiencesContainerPreview,
+.educationContainerPreview {
+  padding: 1.25rem 1.25rem 0rem 1.25rem;
 }
 
 .componentTitle {
@@ -161,61 +236,150 @@ button:hover {
   font-size: 1.1rem;
 }
 
-.name {
+.nameContainerPreview {
   grid-area: name;
   background-color: rgb(16, 50, 91);
   font-size: 4rem;
-  min-height: 105.3333333px;
+  height: 108px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0rem 1.25rem;
 }
 
-.summary {
+.summaryContainerPreview {
   grid-area: summary;
 }
 
-.personalInfo {
-  grid-area: info;
-  background-color: rgb(53, 57, 59);
+.summaryPreview {
+  font-style: italic;
 }
 
-.personalInfo p {
-  padding-top: 0.25rem;
+.infoAndSkillsContainerPreview {
+  grid-area: infoSkills;
+  background-color: rgb(43, 47, 49);
 }
 
-.phoneNum p {
-  padding: 0rem;
+.infoAndSkillsContainerPreview div {
+  margin-bottom: 0.5rem;
 }
 
-.projects {
+.skillsPreviev li {
+  margin-left: 1.25rem;
+}
+
+.projectsContainerPreview {
   grid-area: projects;
 }
 
-.projectName {
+.projectTitle {
   font-weight: bold;
   padding-bottom: 0.25rem;
 }
 
-.experience {
+.projectPreview {
+  padding-bottom: 0.5rem;
+}
+
+.projectDescription {
+  padding-left: 1.25rem;
+}
+
+.projectsContainerPreview div:last-child {
+  padding-bottom: 0;
+}
+
+.experiencesContainerPreview {
   grid-area: experience;
 }
 
-.education {
-  grid-area: education;
+.experiencesContainerPreview div:last-child {
+  padding-bottom: 0;
 }
 
-.componentContent {
+.experiencePreview {
   display: flex;
+  padding-bottom: 0.5rem;
 }
 
-.workplaceInfo,
-.schoolInfo {
-  padding-left: 5rem;
+.experienceTime {
+  width: 8rem;
 }
+
+.experienceInfo {
+  flex: 1;
+}
+
+.experienceCompanyAndLocalization {
+  font-size: 0.9rem;
+}
+
+.experiencePreview div {
+  padding-bottom: 0.25rem;
+}
+
+.educationContainerPreview {
+  grid-area: education;
+  padding-bottom: 1.25rem;
+}
+
+.educationContainerPreview div:last-child {
+  padding-bottom: 0;
+}
+
+.educationPreview {
+  display: flex;
+  padding-bottom: 0.5rem;
+}
+
+.educationTime {
+  width: 8rem;
+}
+
+.educationInfo {
+  flex: 1;
+}
+
+.educationLocalization,
+.educationField,
+.educationDegree {
+  font-size: 0.9rem;
+}
+
+.educationPreview div {
+  padding-bottom: 0.25rem;
+}
+/*  */
 
 @media print {
-  .mainForm {
+  header,
+  .mainForm,
+  footer,
+  ::-webkit-scrollbar {
     display: none;
   }
-  .printableCV {
-    display: grid;
+  .previewCV {
+    margin: -1rem;
+    width: 100vw;
+    height: 100vh;
+  }
+}
+@media (max-width: 1530px) {
+  body {
+    min-width: 850px;
+    overflow-y: scroll;
+  }
+
+  main {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mainForm {
+    width: 800px;
+  }
+
+  .headerTitle {
+    justify-content: center;
   }
 }
