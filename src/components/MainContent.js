@@ -8,85 +8,68 @@ export default class MainContent extends PureComponent {
 
     this.state = {
       personalInfo: {
-        firstName: "Kacper",
-        lastName: "Szulc",
-        adress: "Poznan, Poland",
-        phoneNum: "600 434 411",
-        mail: "szulckacper1@gmail.com",
-        link1: { name: "GitHub", adress: "github.com/halldor03" },
-        link2: { name: "LinkedIn", adress: "linkedin.com/in/szulckacper" },
-        summary: `Detail-oriented Civil Engineer with over 3 years of experience and a zest for solving complex problems. After realizing I'm more interested in technology than what happens on construction site, decided to make a career shift.`,
-        skill1: "HTML, CSS",
-        skill2: "Javascript, ReactJS",
-        skill3: "Webpack",
-        skill4: "Git version control",
+        firstName: "",
+        lastName: "",
+        adress: "",
+        phoneNum: "",
+        mail: "",
+        link1: { name: "", adress: "" },
+        link2: { name: "", adress: "" },
+        summary: "",
+        skill1: "",
+        skill2: "",
+        skill3: "",
+        skill4: "",
       },
       projects: [
         {
-          name: "CV Creator (HTML, CSS, REACTJS)",
-          description1:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
-          description2:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
-          description3:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
-          description4:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+          name: "",
+          description1: "",
+          description2: "",
+          description3: "",
+          description4: "",
           id: uniqid(),
         },
         {
-          name: "Weather App (HTML, CSS, JS, API)",
-          description1:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
-          description2:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
-          description3:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
-          description4:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+          name: "",
+          description1: "",
+          description2: "",
+          description3: "",
+          description4: "",
           id: uniqid(),
         },
         {
-          name: "Todo List (HTML, CSS, JS)",
-          description1:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
-          description2:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
-          description3:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
-          description4:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+          name: "",
+          description1: "",
+          description2: "",
+          description3: "",
+          description4: "",
           id: uniqid(),
         },
       ],
       experiences: [
         {
-          position: "Assistant Civil Engineer",
-          company: "SD PROJEKT Sp. z o.o.",
-          localization: "Poznan, Poland",
-          description1:
-            "Designed complex road projects in coordination with contractors",
-          description2:
-            "Coordinated and monitored execution of projects for compliance with specifications",
-          description3:
-            "Assisted Senior Engineer in both project-oriented and team-oriented tasks (e.g. onboarding new employees)",
-          description4:
-            "Acted as client manager for investors, both private and government",
-          description5:
-            "Helped to implement the usage of sophisticated computer-aided design programs to enhance design process",
-          workedFrom: "2019",
-          workedTo: "Present",
+          position: "",
+          company: "",
+          localization: "",
+          description1: "",
+          description2: "",
+          description3: "",
+          description4: "",
+          description5: "",
+          workedFrom: "",
+          workedTo: "",
           id: uniqid(),
         },
       ],
       educations: [
         {
-          schoolName: "Poznan University of Technology",
-          localization: "Poznan, Poland",
-          field: "Civil Engineering",
-          degree: "M.Sc.Eng.",
-          studiedFrom: "2016",
-          studiedTo: "2022",
+          schoolName: "",
+          localization: "",
+          field: "",
+          degree: "",
+          studiedFrom: "",
+          studiedTo: "",
           id: uniqid(),
         },
       ],
