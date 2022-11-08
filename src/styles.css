@@ -11,7 +11,7 @@
   margin: 0px;
   box-sizing: border-box;
   font-family: "Open Sans", sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   text-decoration: none;
   color: rgb(200, 195, 188);
   line-height: 1.5;
@@ -42,7 +42,7 @@ ul li::before {
   margin-left: -1rem;
 }
 
-#body {
+body {
   height: 100vh;
 }
 
@@ -50,19 +50,13 @@ header {
   background-color: rgb(38, 42, 43);
   height: 6rem;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  padding-left: 1rem;
 }
 
 .headerTitle {
   font-size: 3rem;
-  /* width: calc(40vw+800px); */
-  width: 80vw;
-  min-width: fit-content;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  margin-left: 2rem;
 }
 
 main {
@@ -88,9 +82,7 @@ footer {
   display: flex;
   flex-direction: column;
   width: 40vw;
-  max-width: 1000px;
-  /* min-width: fit-content; */
-  /* width: clamp(30rem, 40vw, 50rem); */
+  max-width: 800px;
   padding: 1rem;
   margin: 1rem;
   border-radius: 0.5rem;
@@ -111,13 +103,13 @@ textarea {
 
 .personalForm textarea {
   resize: vertical;
-  min-height: 88px;
+  min-height: 77px;
   overflow: hidden;
 }
 
 .projectsForm textarea {
   resize: vertical;
-  min-height: 64px;
+  min-height: 56px;
   overflow: hidden;
 }
 
@@ -196,29 +188,34 @@ button:hover {
 }
 
 .printButton {
+  background-color: rgb(22, 129, 58);
   margin-top: 1rem;
+}
+
+.printButton:hover {
+  background-color: rgb(18, 78, 38);
 }
 /*  */
 
 /* PREVIEW */
 .previewCV {
   background-color: rgb(34, 36, 38);
-  /* min-width: 40vw; */
-  width: 800px;
-  /* max-width: 1000px; */
-  /* min-width: fit-content; */
-  /* width: clamp(30rem, 40vw, 50rem); */
-  /* padding: 1rem; */
+  width: 210mm;
+  height: 297mm;
   margin: 1rem;
   display: grid;
   grid-template-columns: 5fr 2fr;
-  grid-template-rows: min-content;
+  grid-auto-rows: min-content;
   grid-template-areas:
     "name name"
     "summary infoSkills"
     "projects infoSkills"
     "experience infoSkills"
     "education infoSkills";
+  position: sticky;
+  top: 2rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
 }
 
 .summaryContainerPreview,
@@ -226,7 +223,7 @@ button:hover {
 .projectsContainerPreview,
 .experiencesContainerPreview,
 .educationContainerPreview {
-  padding: 1.25rem 1.25rem 0rem 1.25rem;
+  padding: 1.5rem 1.5rem 0rem 1.5rem;
 }
 
 .componentTitle {
@@ -244,7 +241,9 @@ button:hover {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 0rem 1.25rem;
+  padding: 0rem 1.5rem;
+  border-top-right-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
 }
 
 .summaryContainerPreview {
@@ -258,6 +257,8 @@ button:hover {
 .infoAndSkillsContainerPreview {
   grid-area: infoSkills;
   background-color: rgb(43, 47, 49);
+  border-bottom-right-radius: 0.5rem;
+  height: 300%;
 }
 
 .infoAndSkillsContainerPreview div {
@@ -265,7 +266,7 @@ button:hover {
 }
 
 .skillsPreviev li {
-  margin-left: 1.25rem;
+  margin-left: 1.5rem;
 }
 
 .projectsContainerPreview {
@@ -282,7 +283,7 @@ button:hover {
 }
 
 .projectDescription {
-  padding-left: 1.25rem;
+  padding-left: 1.5rem;
 }
 
 .projectsContainerPreview div:last-child {
@@ -320,7 +321,7 @@ button:hover {
 
 .educationContainerPreview {
   grid-area: education;
-  padding-bottom: 1.25rem;
+  padding-bottom: 1.5rem;
 }
 
 .educationContainerPreview div:last-child {
@@ -354,32 +355,35 @@ button:hover {
 @media print {
   header,
   .mainForm,
-  footer,
-  ::-webkit-scrollbar {
+  footer {
     display: none;
   }
+
   .previewCV {
-    margin: -1rem;
-    width: 100vw;
-    height: 100vh;
-  }
-}
-@media (max-width: 1530px) {
-  body {
-    min-width: 850px;
-    overflow-y: scroll;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
   }
 
+  .previewCV div {
+    border-radius: 0;
+  }
+}
+
+@media (max-width: 1300px) {
   main {
     flex-direction: column;
     align-items: center;
   }
 
   .mainForm {
-    width: 800px;
+    width: 210mm;
   }
 
-  .headerTitle {
+  header {
     justify-content: center;
   }
 }

@@ -1,3 +1,5 @@
+CV creator that lets you generate simple resume. Check it out here: https://halldor03.github.io/cv-application/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

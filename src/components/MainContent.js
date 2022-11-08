@@ -8,68 +8,78 @@ export default class MainContent extends PureComponent {
 
     this.state = {
       personalInfo: {
-        firstName: "",
-        lastName: "",
-        adress: "",
-        phoneNum: "",
-        mail: "",
-        link1: { name: "", adress: "" },
-        link2: { name: "", adress: "" },
-        summary: "",
-        skill1: "",
-        skill2: "",
-        skill3: "",
-        skill4: "",
+        firstName: "John",
+        lastName: "Smith",
+        adress: "San Francisco, CA",
+        phoneNum: "123 456 789",
+        mail: "johnsmith1@gmail.com",
+        link1: { name: "GitHub", adress: "github.com/johnsmith1" },
+        link2: { name: "LinkedIn", adress: "linkedin.com/in/johnsmith1" },
+        summary: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`,
+        skill1: "Some skill",
+        skill2: "Some other skill",
+        skill3: "Another skill",
+        skill4: "One more skill",
       },
       projects: [
         {
-          name: "",
-          description1: "",
-          description2: "",
-          description3: "",
-          description4: "",
+          name: "My awesome project",
+          description1:
+            "Scelerisque eleifend donec pretium vulputate sapien nec sagittis. Et ligula ullamcorper malesuada proin",
+          description2:
+            "Consequat semper viverra nam libero justo. Etiam dignissim diam quis enim lobortis scelerisque fermentum dui faucibus",
+          description3: "Nisi lacus sed viverra tellus in hac habitasse platea",
           id: uniqid(),
         },
         {
-          name: "",
-          description1: "",
-          description2: "",
-          description3: "",
-          description4: "",
+          name: "Even better project",
+          description1:
+            "Sit amet aliquam id diam maecenas. Nunc scelerisque viverra mauris in aliquam sem fringilla ut morbi",
+          description2:
+            "Sed adipiscing diam donec adipiscing tristique risus nec. Nec sagittis aliquam malesuada bibendum",
+          description3:
+            "Morbi tincidunt augue interdum velit. Congue quisque egestas diam in arcu cursus euismod quis viverra",
           id: uniqid(),
         },
-        {
-          name: "",
-          description1: "",
-          description2: "",
-          description3: "",
-          description4: "",
-          id: uniqid(),
-        },
+        // {
+        //   name: "Best project ever",
+        //   description1:
+        //     "Porta lorem mollis aliquam ut porttitor leo a diam sollicitudin. Dignissim sodales ut eu sem",
+        //   description2:
+        //     "Urna condimentum mattis pellentesque id. Lacus vestibulum sed arcu non odio euismod lacinia at quis",
+        //   description3:
+        //     "Suspendisse in est ante in nibh mauris cursus mattis molestie",
+        //   id: uniqid(),
+        // },
       ],
       experiences: [
         {
-          position: "",
-          company: "",
-          localization: "",
-          description1: "",
-          description2: "",
-          description3: "",
-          description4: "",
-          description5: "",
-          workedFrom: "",
-          workedTo: "",
+          position: "Junior Web Developer",
+          company: "Apple inc.",
+          localization: "Cupertino, CA",
+          description1:
+            "Led transition from firebase to AWS, saving company $3,700+ monthly and increasing load speeds by an average of 38%",
+          description2:
+            "Built mock designs and wireframes for landing pages for 5 new product concepts",
+          description3:
+            "Created the user experience that fetched, parsed, and formatted analytic data, and relayed it into React components",
+          description4:
+            "Created accessible, responsive, and functional user interfaces to allow visitors on any device to have the same perfect user experience",
+          description5:
+            "Developed object-oriented code in Node.js with 100% accordance to industry and company standards",
+          workedFrom: "2019",
+          workedTo: "Present",
           id: uniqid(),
         },
       ],
       educations: [
         {
-          schoolName: "",
-          localization: "",
-          field: "",
-          degree: "",
-          studiedFrom: "",
-          studiedTo: "",
+          schoolName: "California Institute of Technology",
+          localization: "Pasadena, CA",
+          field: "Computer Science",
+          degree: "M.Sc.Eng.",
+          studiedFrom: "2014",
+          studiedTo: "2029",
           id: uniqid(),
         },
       ],
@@ -317,7 +327,7 @@ export default class MainContent extends PureComponent {
             />
             <input
               type="text"
-              placeholder="Skill"
+              placeholder="Skillset"
               id="skill1Input"
               onChange={this.handleChangePersonalInfo}
               value={personalInfo.skill1}
@@ -325,7 +335,7 @@ export default class MainContent extends PureComponent {
             />
             <input
               type="text"
-              placeholder="Skill"
+              placeholder="Skillset"
               id="skill2Input"
               onChange={this.handleChangePersonalInfo}
               value={personalInfo.skill2}
@@ -333,7 +343,7 @@ export default class MainContent extends PureComponent {
             />
             <input
               type="text"
-              placeholder="Skill"
+              placeholder="Skillset"
               id="skill3Input"
               onChange={this.handleChangePersonalInfo}
               value={personalInfo.skill3}
@@ -341,7 +351,7 @@ export default class MainContent extends PureComponent {
             />
             <input
               type="text"
-              placeholder="Skill"
+              placeholder="Skillset"
               id="skill4Input"
               onChange={this.handleChangePersonalInfo}
               value={personalInfo.skill4}
@@ -389,15 +399,6 @@ export default class MainContent extends PureComponent {
                     onChange={(e) => this.handleChangeProjects(e, project)}
                     name="description3"
                     defaultValue={project.description3}
-                    autoComplete="chrome-off"
-                  />
-                  <textarea
-                    type="text"
-                    placeholder="Project details"
-                    className="projectDescriptionInput"
-                    onChange={(e) => this.handleChangeProjects(e, project)}
-                    name="description4"
-                    defaultValue={project.description4}
                     autoComplete="chrome-off"
                   />
                   <button onClick={(e) => this.deleteProject(e, index)}>
@@ -611,7 +612,7 @@ export default class MainContent extends PureComponent {
             <button onClick={this.addEducation}>Add education</button>
           </fieldset>
           <button type="button" onClick={window.print} className="printButton">
-            Print me!
+            Save as PDF
           </button>
         </form>
         <div className="previewCV">

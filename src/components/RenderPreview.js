@@ -16,17 +16,17 @@ export default class RenderPreview extends PureComponent {
         <div className="infoAndSkillsContainerPreview">
           <div className="infoContainerPreview">
             <div className="componentTitle">Personal Details</div>
-            <div className="adressContainer">
-              <p>Adress:</p>
-              {personalInfo.adress}
+            <div className="mailContainer">
+              <p>Email:</p>
+              {personalInfo.mail}
             </div>
             <div className="phoneNumContainer">
               <p>Phone Number:</p>
               {personalInfo.phoneNum}
             </div>
-            <div className="mailContainer">
-              <p>Email:</p>
-              {personalInfo.mail}
+            <div className="adressContainer">
+              <p>Adress:</p>
+              {personalInfo.adress}
             </div>
             <div className="link1Container">
               <p>{personalInfo.link1.name}:</p> {personalInfo.link1.adress}
@@ -59,7 +59,6 @@ export default class RenderPreview extends PureComponent {
                   <li>{project.description1}</li>
                   <li>{project.description2}</li>
                   <li>{project.description3}</li>
-                  <li>{project.description4}</li>
                 </ul>
               </div>
             );
@@ -83,6 +82,7 @@ export default class RenderPreview extends PureComponent {
                     <li>{experience.description2}</li>
                     <li>{experience.description3}</li>
                     <li>{experience.description4}</li>
+                    <li>{experience.description5}</li>
                   </ul>
                 </div>
               </div>
