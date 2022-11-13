@@ -1,14 +1,9 @@
-import React, { PureComponent } from "react";
+import React from "react";
 
-export default class Header extends PureComponent {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    return (
-      <header>
-        <div className="headerTitle">CV CREATOR</div>
-      </header>
-    );
-  }
+export default function Header() {
+  return (
+    <header>
+      <div className="headerTitle">CV CREATOR</div>
+    </header>
+  );
 }

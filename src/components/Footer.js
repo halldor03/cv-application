@@ -1,10 +1,5 @@
-import React, { PureComponent } from "react";
+import React from "react";
 
-export default class Footer extends PureComponent {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    return <footer>Copyright &copy; Kacper Szulc 2022</footer>;
-  }
+export default function Footer() {
+  return <footer>Copyright &copy; Kacper Szulc 2022</footer>;
 }
