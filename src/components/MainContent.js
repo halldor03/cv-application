@@ -35,7 +35,7 @@ export default function MainContent() {
       description2:
         "Sed adipiscing diam donec adipiscing tristique risus nec. Nec sagittis aliquam malesuada bibendum",
       description3:
-        "Morbi tincidunt augue interdum velit. Congue quisque egestas diam in arcu cursus euismod quis viverra",
+        "Morbi tincidunt augue interdum velit. Congue quisque egestas diam in arcu cursus euismod quis viverre",
       id: uniqid(),
     },
   ]);
