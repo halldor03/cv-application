@@ -41,16 +41,6 @@ export default class MainContent extends PureComponent {
             "Morbi tincidunt augue interdum velit. Congue quisque egestas diam in arcu cursus euismod quis viverra",
           id: uniqid(),
         },
-        // {
-        //   name: "Best project ever",
-        //   description1:
-        //     "Porta lorem mollis aliquam ut porttitor leo a diam sollicitudin. Dignissim sodales ut eu sem",
-        //   description2:
-        //     "Urna condimentum mattis pellentesque id. Lacus vestibulum sed arcu non odio euismod lacinia at quis",
-        //   description3:
-        //     "Suspendisse in est ante in nibh mauris cursus mattis molestie",
-        //   id: uniqid(),
-        // },
       ],
       experiences: [
         {
@@ -79,7 +69,7 @@ export default class MainContent extends PureComponent {
           field: "Computer Science",
           degree: "M.Sc.Eng.",
           studiedFrom: "2014",
-          studiedTo: "2029",
+          studiedTo: "2019",
           id: uniqid(),
         },
       ],

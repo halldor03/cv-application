@@ -7,6 +7,8 @@ export default class RenderPreview extends PureComponent {
 
   render() {
     const { personalInfo, projects, experiences, educations } = this.props;
+    const link1Href = "https://www." + personalInfo.link1.adress;
+    const link2Href = "https://www." + personalInfo.link2.adress;
 
     return (
       <>
@@ -29,10 +31,12 @@ export default class RenderPreview extends PureComponent {
               {personalInfo.adress}
             </div>
             <div className="link1Container">
-              <p>{personalInfo.link1.name}:</p> {personalInfo.link1.adress}
+              <p>{personalInfo.link1.name}:</p>
+              <a href={link1Href}>{personalInfo.link1.adress}</a>
             </div>
             <div className="link2Container">
-              <p>{personalInfo.link2.name}:</p> {personalInfo.link2.adress}
+              <p>{personalInfo.link2.name}:</p>
+              <a href={link2Href}>{personalInfo.link2.adress}</a>
             </div>
           </div>
           <div className="skillsContainerPreview">
